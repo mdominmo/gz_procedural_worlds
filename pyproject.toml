@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68.0", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gz-procedural-worlds"
+version = "0.1.0"
+description = "Procedural world generator for Gazebo Harmonic / PX4 SITL simulation"
+requires-python = ">=3.10"
+dependencies = [
+    "jinja2>=3.1",
+    "pyyaml>=6.0",
+    "numpy>=1.24",
+    "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov",
+]
+
+[project.scripts]
+gz-procedural-worlds = "gz_procedural_worlds.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:launch_testing -p no:launch_ros -p no:ament_copyright -p no:ament_pep257 -p no:ament_xmllint -p no:ament_flake8 -p no:ament_lint -p no:colcon_core_warnings_stderr"

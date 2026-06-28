@@ -1,0 +1,56 @@
+world:
+  name: "procedural_default"
+  seed: 42
+  description: "Default procedural world with mixed obstacles"
+
+area:
+  size_x: 100.0
+  size_y: 100.0
+  ground_plane_size: 100
+
+spawn_zone:
+  center: [0.0, 0.0]
+  radius: 5.0
+
+spherical_coordinates:
+  latitude_deg: 52.11486
+  longitude_deg: -6.613
+  elevation: 2
+  heading_deg: 0
+
+connectivity:
+  enabled: true
+  check_altitude: 3.0
+  safety_margin: 1.5
+  start: [0.0, 0.0]
+  goals:
+    - [40.0, 40.0]
+    - [-40.0, -40.0]
+  max_removal_iterations: 50
+
+obstacles:
+  - model: "Pine Tree"
+    count: 20
+    distribution: "random"
+    min_spacing: 3.0
+    bbox_radius: 1.5
+    height: 8.0
+    yaw_random: true
+    area_bounds:
+      x_min: -45.0
+      x_max: 45.0
+      y_min: -45.0
+      y_max: 45.0
+
+  - model: "Standing person"
+    count: 3
+    distribution: "random"
+    min_spacing: 2.0
+    bbox_radius: 0.4
+    height: 1.8
+    yaw_random: true
+
+lighting:
+  sun_direction: [-0.5, 0.1, -0.9]
+  sun_intensity: 1.0
+  ambient: [0.4, 0.4, 0.4, 1.0]

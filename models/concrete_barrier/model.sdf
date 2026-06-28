@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<sdf version="1.10">
+  <model name="concrete_barrier">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>2.0 0.6 1.0</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>2.0 0.6 1.0</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.75 0.72 0.68 1</ambient>
+          <diffuse>0.8 0.78 0.75 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+      <pose>0 0 0.5 0 0 0</pose>
+    </link>
+  </model>
+</sdf>

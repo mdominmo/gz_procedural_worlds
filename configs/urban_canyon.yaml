@@ -1,0 +1,78 @@
+world:
+  name: "procedural_urban_canyon"
+  seed: 200
+  description: "Urban canyon with walls and barriers for corridor navigation"
+
+area:
+  size_x: 80.0
+  size_y: 80.0
+  ground_plane_size: 100
+
+spawn_zone:
+  center: [0.0, 0.0]
+  radius: 5.0
+
+spherical_coordinates:
+  latitude_deg: 52.11486
+  longitude_deg: -6.613
+  elevation: 2
+  heading_deg: 0
+
+connectivity:
+  enabled: true
+  check_altitude: 3.0
+  safety_margin: 1.5
+  start: [0.0, 0.0]
+  goals:
+    - [30.0, 30.0]
+    - [-30.0, -30.0]
+  max_removal_iterations: 40
+
+obstacles:
+  - model: "wall_segment_tall"
+    count: 16
+    distribution: "corridor"
+    min_spacing: 1.0
+    bbox_radius: 2.1
+    height: 5.0
+    yaw_random: false
+    corridor:
+      width: 6.0
+      segments: 4
+      direction: "random"
+    area_bounds:
+      x_min: -35.0
+      x_max: 35.0
+      y_min: -35.0
+      y_max: 35.0
+
+  - model: "concrete_barrier"
+    count: 12
+    distribution: "random"
+    min_spacing: 3.0
+    bbox_radius: 1.1
+    height: 1.0
+    yaw_random: true
+    area_bounds:
+      x_min: -35.0
+      x_max: 35.0
+      y_min: -35.0
+      y_max: 35.0
+
+  - model: "pole"
+    count: 8
+    distribution: "grid_jitter"
+    min_spacing: 5.0
+    bbox_radius: 0.15
+    height: 4.0
+    yaw_random: false
+    area_bounds:
+      x_min: -30.0
+      x_max: 30.0
+      y_min: -30.0
+      y_max: 30.0
+
+lighting:
+  sun_direction: [-0.5, 0.1, -0.9]
+  sun_intensity: 1.0
+  ambient: [0.45, 0.45, 0.45, 1.0]
