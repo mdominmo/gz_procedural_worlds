@@ -1,0 +1,12 @@
+FROM python:3.11-slim
+
+RUN pip install --no-cache-dir jinja2 pyyaml numpy
+
+COPY src /app/src
+COPY templates /app/templates
+COPY models /app/models
+
+ENV PYTHONPATH=/app/src
+WORKDIR /app
+
+ENTRYPOINT ["python", "-m", "gz_procedural_worlds"]
